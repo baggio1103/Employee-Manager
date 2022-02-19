@@ -3,10 +3,10 @@
 ![get_all.png](get_all.png)
 
 ## CRUD stands for 4 operations:
-####- Create
-####- READ  (same as - GET)
-####- Update
-####- Delete
+#### - Create
+#### - READ  (same as - GET)
+#### - Update
+#### - Delete
 
 ### __LET'S see all in action__
 ### Create
