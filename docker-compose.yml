@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+
+  postgresqldb:
+    container_name: database
+    image: postgres:9.6-alpine
+    volumes:
+      - employee:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=employee
+      - POSTGRES_USER=baggio
+      - POSTGRES_PASSWORD=baggio
+
+  backend:
+    image: baggio1103/employee-manager:1
+    container_name: employee-manager-server
+    links:
+      - postgresqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb/employee
+      - SPRING_DATASOURCE_USERNAME=baggio
+      - SPRING_DATASOURCE_PASSWORD=baggio
+    ports:
+      - "8888:8080"
+
+  frontend:
+    container_name: employee-manager-ui
+    image: baggio1103/employee-manager-ui:2
+    ports:
+      - 4200:80
+
+volumes:
+  employee:
