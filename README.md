@@ -17,7 +17,7 @@
 ![update](update.png)
 ### Delete
 ![delete](delete.png)
-##Application Architecture
+## Application Architecture
 ![architecture.png](architecture.png)
 ### Deployment
 ![deployment.png](deployment.png)
